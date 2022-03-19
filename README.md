@@ -51,7 +51,14 @@ data : HOST
 /data/db: Container registry 
 ### `docker run --name mongodb --rm -d -v data:/data/db --network goals-network mongo`
 
+BIND MOUNTS FOR BACKEND
+### `docker run --name goals_backend -v /home/batman/Downloads/multi-01-starting-setup/backend:/app -v /app/node_modules -p 80:80 --rm -d --network goals-network goals_node`
 
+CHECK THE LOGS
+### `docker logs goals_backend`
 
+BIND MOUNTS FOR FRONTEND
+
+### `docker run -v /home/batman/Downloads/multi-01-starting-setup/frontend/src:/app/src --name goals_frontend --rm -d -p 3000:3000 -it goals_react`
 
 
