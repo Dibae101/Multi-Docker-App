@@ -29,6 +29,26 @@ LIST IMAGES
 
 ### `docker images`
 
+CREATING A NETWORK
+### `docker network ls`
+### `docker network create goals-network`
+
+RUNNING MONGODB WITH THE NETWORK
+### `docker run --name mongodb --rm -d --network goals-network mongo`
+
+RUNNING BACKEND WITH THE NETWORK (build the image again)
+
+### `docker build -t goals_node .`
+### `docker run --name goals_backend --rm -d --network goals-network goals_node`
+
+IMPORTANT: FRONTEND IS PROVISIONED BY WEB BROWSERS, SO RUNNING IT ONTO AN NETWORK DOESN'T SERVER THE APPLICATION. (build the image again)
+
+# `docker build -t goals_react .`
+### `docker run --name goals_frontend --rm -d -p 3000:3000 -it goals_react`
+
+THE NODE APPLICATION IS PROVISIONED WITH MONGODB BUT STILL IT NEEDS TO COMMUNICATE WITH REACT APP ON PORT 80.
+
+### `docker run --name goals_backend --rm -d -p 80:80 --network goals-network goals_node`
 
 
 
