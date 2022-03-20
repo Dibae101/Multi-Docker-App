@@ -61,4 +61,13 @@ BIND MOUNTS FOR FRONTEND
 
 ### `docker run -v /home/batman/Downloads/multi-01-starting-setup/frontend/src:/app/src --name goals_frontend --rm -d -p 3000:3000 -it goals_react`
 
+## DOCKER-COMPOSE
+
+DOCKER COMPOSE MAKES IT EASIER TO MANAGE MULTI-CONTAINER APPLICATIONS,
+IT MANAGES NETWORK ON IT's OWN
+### `docker-compose up` || `docker -compose up -d`
+
+### `docker-compose down`
+
+
 
